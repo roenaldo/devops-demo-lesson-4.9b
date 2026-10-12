@@ -87,11 +87,11 @@ jobs:
       - name: Build Docker image
         run: |
           echo "Building Docker image..."
-          docker build -t $DOCKER_USERNAME/devops-demo-4.9.0:latest .
+          docker build -t $DOCKER_USERNAME/devops-demo:latest .
 
       - name: Push to Docker Hub
         run: |
           echo "Logging in to Docker Hub..."
           echo $DOCKER_TOKEN | docker login -u $DOCKER_USERNAME --password-stdin
           echo "Pushing image to Docker Hub..."
-          docker push $DOCKER_USERNAME/devops-demo-4.9.0:latest
+          docker push $DOCKER_USERNAME/devops-demo:latest
